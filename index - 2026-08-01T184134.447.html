@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050608">
+<meta name="facebook-domain-verification" content="c196ghgmfq8720ekps0ntlk3mfaoqf" />
+<title>Nakami Trading · Jaime Barbosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;
+    --ink:#F3F6F7;
+    --muted:rgba(243,246,247,.55);
+    --line:rgba(243,246,247,.10);
+    --card:rgba(255,255,255,.045);
+    --kick:#53FC18;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Outfit',system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);
+    min-height:100dvh;display:flex;justify-content:center;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  .page{position:relative;width:100%;max-width:480px;min-height:100dvh;display:flex;flex-direction:column}
+
+  /* ---- hero ---- */
+  .hero{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,.8) 72%, #000 100%);
+  }
+  .hero-mark{
+    position:absolute;left:0;right:0;bottom:22px;text-align:center;z-index:2;
+  }
+  .hero-mark h1{
+    font-size:26px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+  }
+  .hero-mark .tag{
+    margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ---- links ---- */
+  .links{padding:28px 20px 20px;display:flex;flex-direction:column;gap:12px}
+  .link-card{
+    display:flex;align-items:center;gap:14px;
+    padding:19px 22px;border-radius:20px;background:var(--card);
+    border:1px solid var(--line);text-decoration:none;color:var(--ink);
+    transition:transform .15s, background .2s;
+  }
+  .link-card:active{transform:scale(.98);background:rgba(255,255,255,.07)}
+  .link-card .arrow-lead{
+    font-size:17px;color:var(--muted);flex-shrink:0;width:18px;text-align:center;
+  }
+  .link-card .txt{flex:1;min-width:0}
+  .link-card .row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .link-card .title{font-size:18px;font-weight:700;letter-spacing:-.01em}
+  .link-card .sub{margin-top:5px;font-size:13px;color:var(--muted)}
+
+  /* mentoría */
+  .link-card.mentoria .title{color:var(--ink)}
+
+  /* clase gratis: tarjeta protagonista (blanco, con brillo lento) */
+  .link-card.gratis{
+    background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.35);
+    padding:22px;
+    animation:glow-breathe 3.2s ease-in-out infinite;
+  }
+  @keyframes glow-breathe{
+    0%,100%{box-shadow:0 8px 26px -14px rgba(255,255,255,.25);border-color:rgba(255,255,255,.22)}
+    50%{box-shadow:0 10px 34px -10px rgba(255,255,255,.55);border-color:rgba(255,255,255,.5)}
+  }
+  .link-card.gratis .arrow-lead{
+    color:var(--ink);font-size:19px;animation:arrow-nudge 1.8s ease-in-out infinite;
+  }
+  @keyframes arrow-nudge{
+    0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}
+  }
+  .link-card.gratis .title{font-size:19.5px;color:var(--ink)}
+  .link-card.gratis .badge{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:#000;background:var(--ink);
+    padding:3px 9px;border-radius:20px;font-weight:700;
+  }
+  .link-card.gratis .sub{color:rgba(243,246,247,.85);font-weight:600}
+
+  /* kick */
+  .live-pill{
+    display:inline-flex;align-items:center;gap:5px;padding:3px 8px 3px 6px;border-radius:20px;
+    background:rgba(83,252,24,.12);
+  }
+  .live-pill .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--kick);
+    box-shadow:0 0 6px var(--kick);animation:pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .live-pill .lbl{
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--kick);font-weight:600;
+  }
+
+  footer{
+    margin-top:auto;padding:24px 22px 40px;text-align:center;
+  }
+  .footer-tag{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;
+    color:var(--muted);text-transform:uppercase;
+  }
+
+  @media (min-width:481px){
+    body{align-items:flex-start}
+    .page{box-shadow:0 0 60px rgba(0,0,0,.6)}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <img src="assets/jaime-portrait.png" alt="Jaime Barbosa - Nakami Trading">
+    <div class="hero-mark">
+      <h1>Nakami Trading</h1>
+      <div class="tag">Trading · Disciplina · Fe</div>
+    </div>
+  </div>
+
+  <div class="links">
+
+    <a class="link-card mentoria" href="https://mentoria.nakamiacademy.com" target="_blank" rel="noopener">
+      <div class="txt">
+        <div class="title">Mentoría 1 a 1 ⭐</div>
+        <div class="sub">Postulación requerida — Estudiantes fondeados con un millón</div>
+      </div>
+    </a>
+
+    <a class="link-card gratis" href="https://clasegratis.nakamiacademy.com" target="_blank" rel="noopener">
+      <span class="arrow-lead">→</span>
+      <div class="txt">
+        <div class="row">
+          <div class="title">Fondearse con $1,000,000</div>
+          <span class="badge">Clase gratis</span>
+        </div>
+        <div class="sub">Miércoles 12 de agosto · 8:00 PM</div>
+      </div>
+    </a>
+
+    <a class="link-card kick" href="https://kick.com/jaimebarbosa" target="_blank" rel="noopener">
+      <div class="txt">
+        <div class="row">
+          <div class="title">Kick</div>
+          <span class="live-pill"><span class="dot"></span><span class="lbl">En vivo</span></span>
+        </div>
+        <div class="sub">Trading en vivo · 2 veces por semana</div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div class="footer-tag">Nakami Academy</div>
+  </footer>
+
+</div>
+</body>
+</html>

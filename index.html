@@ -63,11 +63,16 @@
   .link-card .title{font-size:18px;font-weight:700;letter-spacing:-.01em}
   .link-card .sub{margin-top:5px;font-size:13px;color:var(--muted)}
 
-  /* mentoría */
-  .link-card.mentoria .title{color:var(--ink)}
+  /* comunidad whatsapp */
+  .link-card.comunidad .title{color:var(--ink)}
+  .link-card.comunidad .badge-wa{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:#25D366;background:rgba(37,211,102,.12);
+    padding:3px 9px;border-radius:20px;font-weight:700;
+  }
 
-  /* clase gratis: tarjeta protagonista (blanco, con brillo lento) */
-  .link-card.gratis{
+  /* mentoría: tarjeta protagonista (blanco, con brillo lento) */
+  .link-card.mentoria{
     background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
     border:1px solid rgba(255,255,255,.35);
     padding:22px;
@@ -77,19 +82,22 @@
     0%,100%{box-shadow:0 8px 26px -14px rgba(255,255,255,.25);border-color:rgba(255,255,255,.22)}
     50%{box-shadow:0 10px 34px -10px rgba(255,255,255,.55);border-color:rgba(255,255,255,.5)}
   }
-  .link-card.gratis .arrow-lead{
+  .link-card.mentoria .arrow-lead{
     color:var(--ink);font-size:19px;animation:arrow-nudge 1.8s ease-in-out infinite;
   }
   @keyframes arrow-nudge{
     0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}
   }
-  .link-card.gratis .title{font-size:19.5px;color:var(--ink)}
+  .link-card.mentoria .title{font-size:19.5px;color:var(--ink)}
+  .link-card.mentoria .sub{color:rgba(243,246,247,.85);font-weight:600}
+
+  /* clase gratis: tarjeta normal */
+  .link-card.gratis .title{color:var(--ink)}
   .link-card.gratis .badge{
     font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
     text-transform:uppercase;color:#000;background:var(--ink);
     padding:3px 9px;border-radius:20px;font-weight:700;
   }
-  .link-card.gratis .sub{color:rgba(243,246,247,.85);font-weight:600}
 
   /* youtube / en vivo */
   .live-pill{
@@ -134,14 +142,24 @@
   <div class="links">
 
     <a class="link-card mentoria" href="https://mentoria.nakamiacademy.com" target="_blank" rel="noopener">
+      <span class="arrow-lead">→</span>
       <div class="txt">
         <div class="title">Mentoría 1 a 1 ⭐</div>
         <div class="sub">Postulación requerida — Estudiantes fondeados con un millón</div>
       </div>
     </a>
 
+    <a class="link-card comunidad" href="https://chat.whatsapp.com/JOVgIxHAQnP28eTzQxYh8u?mode=gi_t" target="_blank" rel="noopener">
+      <div class="txt">
+        <div class="row">
+          <div class="title">Comunidad gratis de WhatsApp</div>
+          <span class="badge-wa">Gratis</span>
+        </div>
+        <div class="sub">Únete al grupo y recibe las clases y novedades</div>
+      </div>
+    </a>
+
     <a class="link-card gratis" href="https://clasegratis.nakamiacademy.com" target="_blank" rel="noopener">
-      <span class="arrow-lead">→</span>
       <div class="txt">
         <div class="row">
           <div class="title">Cómo retirar tus primeros $1.000</div>
